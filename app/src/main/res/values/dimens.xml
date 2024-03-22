@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Button -->
+    <dimen name="corner_size_big">30dp</dimen>
+    <dimen name="corner_size_normal">20dp</dimen>
+    <dimen name="corner_size_small">10dp</dimen>
+    <dimen name="padding_normal">16dp</dimen>
+</resources>

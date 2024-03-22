@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Widget.Rexuses" parent="@android:style/Widget.Material" />
+
+    <style name="Widget.Rexuses.LevelButton" parent="@style/Widget.MaterialComponents.Button">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="backgroundTint">@color/level_lock_background</item>
+    </style>
+
+    <style name="Widget.Rexuses.LoginButton" parent="@style/Widget.MaterialComponents.Button">
+        <item name="shapeAppearance">@style/RoundedShapeAppearanceSmall</item>
+        <item name="android:padding">@dimen/padding_normal</item>
+    </style>
+
+    <style name="Widget.Rexuses.QuizButton" parent="@style/Widget.MaterialComponents.Button">
+        <item name="shapeAppearance">@style/RoundedShapeAppearanceBig</item>
+        <item name="android:padding">@dimen/padding_normal</item>
+    </style>
+
+    <style name="Widget.Rexuses.SettingsButton" parent="@style/Widget.MaterialComponents.Button">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="shapeAppearance">@style/RoundedShape</item>
+        <item name="backgroundTint">@color/gray_color</item>
+    </style>
+
+    <style name="Widget.Rexuses.AddPhotoButton" parent="@style/Widget.MaterialComponents.Button">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="shapeAppearance">@style/RoundedShape</item>
+    </style>
+
+    <style name="Widget.Rexuses.QuizProgressBar" parent="@style/Widget.Material3.CircularProgressIndicator">
+        <item name="indicatorSize">125dp</item>
+    </style>
+
+    <style name="RoundedShape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">100%</item>
+    </style>
+
+    <style name="RoundedShapeAppearanceBig">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/corner_size_big</item>
+    </style>
+    <style name="RoundedShapeAppearanceSmall">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/corner_size_small</item>
+    </style>
+</resources>

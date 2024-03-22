@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.profile.ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primary">
+
+        <TextView
+            android:id="@+id/profile_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/profile"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@id/profile_image_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/more_image_view"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="15dp"
+            android:contentDescription="@string/more"
+            android:src="@drawable/ic_more"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/profile_image_view"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/profile_imageview_background"
+            android:contentDescription="@string/profile"
+            android:elevation="8dp"
+            android:src="@drawable/ic_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_text_view" />
+
+        <View
+            android:id="@+id/layout_background_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="62.5dp"
+            android:background="@drawable/profile_layout_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/profile_image_view" />
+
+        <Button
+            android:id="@+id/settings_button"
+            style="@style/Widget.Rexuses.SettingsButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:foreground="@drawable/ic_settings"
+            android:foregroundGravity="center"
+            app:layout_constraintEnd_toStartOf="@id/add_photo_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_image_view" />
+
+        <TextView
+            android:id="@+id/settings_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/settings"
+            android:textColor="@color/gray_color"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/settings_button"
+            app:layout_constraintStart_toStartOf="@id/settings_button"
+            app:layout_constraintTop_toBottomOf="@id/settings_button" />
+
+        <Button
+            android:id="@+id/add_photo_button"
+            style="@style/Widget.Rexuses.AddPhotoButton"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="30dp"
+            android:contentDescription="@string/add_photo"
+            android:foreground="@drawable/ic_add_photo"
+            android:foregroundGravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_image_view" />
+
+        <TextView
+            android:id="@+id/add_photo_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/add_photo"
+            android:textColor="@color/gray_color"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/add_photo_button"
+            app:layout_constraintStart_toStartOf="@id/add_photo_button"
+            app:layout_constraintTop_toBottomOf="@id/add_photo_button" />
+
+        <Button
+            android:id="@+id/share_button"
+            style="@style/Widget.Rexuses.SettingsButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:foreground="@drawable/ic_share"
+            android:foregroundGravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/add_photo_button"
+            app:layout_constraintTop_toBottomOf="@id/profile_image_view" />
+
+        <TextView
+            android:id="@+id/share_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/share"
+            android:textColor="@color/gray_color"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/share_button"
+            app:layout_constraintStart_toStartOf="@id/share_button"
+            app:layout_constraintTop_toBottomOf="@id/share_button" />
+
+        <LinearLayout
+            android:id="@+id/exit_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/profile_exit_button_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/layout_background_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/exit_icon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/exit"
+                android:src="@drawable/ic_exit" />
+
+            <TextView
+                android:id="@+id/exit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="8dp"
+                android:text="@string/exit"
+                android:textColor="#65558F"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

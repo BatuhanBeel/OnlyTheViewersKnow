@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.quizapp.ui.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_seriesFragment"
+            app:destination="@id/seriesFragment"
+            app:popUpTo="@id/nav_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.quizapp.ui.register.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/seriesFragment"
+        android:name="com.example.quizapp.ui.series.SeriesFragment"
+        android:label="fragment_series"
+        tools:layout="@layout/fragment_series" >
+        <action
+            android:id="@+id/action_seriesFragment_to_seriesInformationFragment"
+            app:destination="@id/informationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.quizapp.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizzesFragment"
+        android:name="com.example.quizapp.ui.quizzes.QuizzesFragment"
+        android:label="fragment_user_quizes"
+        tools:layout="@layout/fragment_quizzes" >
+    <action
+        android:id="@+id/action_userQuizzesFragment_to_levelFragment"
+        app:destination="@id/levelFragment" />
+</fragment>
+     <fragment
+        android:id="@+id/informationFragment"
+        android:name="com.example.quizapp.ui.information.InformationFragment"
+        android:label="fragment_series_information"
+        tools:layout="@layout/fragment_information">
+        <argument
+            android:name="seriesAndResultData"
+            app:argType="com.example.quizapp.model.SeriesAndResults" />
+         <action
+             android:id="@+id/action_informationFragment_to_levelFragment"
+             app:destination="@id/levelFragment" />
+     </fragment>
+    <fragment
+        android:id="@+id/levelFragment"
+        android:name="com.example.quizapp.ui.level.LevelFragment"
+        android:label="fragment_levels"
+        tools:layout="@layout/fragment_levels">
+    <argument
+        android:name="seriesAndResultData"
+        app:argType="com.example.quizapp.model.SeriesAndResults" />
+        <action
+            android:id="@+id/action_levelFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.example.quizapp.ui.quiz.QuizFragment"
+        android:label="QuizFragment" >
+        <argument
+            android:name="question_list"
+            app:argType="com.example.quizapp.model.LevelQuestions[]" />
+        <argument
+            android:name="level"
+            app:argType="integer" />
+        <argument
+            android:name="series_title"
+            app:argType="string" />
+        <argument
+            android:name="seriesAndResultData"
+            app:argType="com.example.quizapp.model.SeriesAndResults" />
+        <action
+            android:id="@+id/action_quizFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.quizapp.ui.result.ResultFragment"
+        android:label="ResultFragment" >
+        <argument
+            android:name="trueCount"
+            app:argType="integer" />
+        <argument
+            android:name="question_list"
+            app:argType="com.example.quizapp.model.LevelQuestions[]" />
+        <argument
+            android:name="level"
+            app:argType="integer" />
+        <argument
+            android:name="series_title"
+            app:argType="string" />
+        <argument
+            android:name="seriesAndResultData"
+            app:argType="com.example.quizapp.model.SeriesAndResults" />
+        <action
+            android:id="@+id/action_resultFragment_to_levelFragment"
+            app:destination="@id/levelFragment"
+            app:popUpTo="@id/levelFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_resultFragment_to_quizFragment"
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/quizFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
